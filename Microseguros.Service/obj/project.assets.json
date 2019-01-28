@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Microseguros.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Microseguros.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Microseguros.Core.dll": {}
+        }
       }
     }
   },
@@ -171,10 +181,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Microseguros.Core/1.0.0": {
+      "type": "project",
+      "path": "../Microseguros.Core/Microseguros.Core.csproj",
+      "msbuildProject": "../Microseguros.Core/Microseguros.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Microseguros.Core >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -207,7 +223,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projects\\Microseguros\\Microseguros.Core\\Microseguros.Core.csproj": {
+              "projectPath": "C:\\projects\\Microseguros\\Microseguros.Core\\Microseguros.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

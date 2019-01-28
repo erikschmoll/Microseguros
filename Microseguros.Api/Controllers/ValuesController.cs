@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microseguros.Core;
+using Microseguros.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Microseguros.Api.Controllers
 {
@@ -10,6 +13,13 @@ namespace Microseguros.Api.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IDeviceService _service;
+
+        public ValuesController(IDeviceService service)
+        {
+            _service = service;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -21,6 +31,7 @@ namespace Microseguros.Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
+            _service.GetAll();
             return "value";
         }
 

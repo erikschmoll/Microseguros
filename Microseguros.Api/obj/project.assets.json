@@ -4333,6 +4333,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Microseguros.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Microseguros.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Microseguros.Core.dll": {}
+        }
+      },
+      "Microseguros.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microseguros.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Microseguros.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Microseguros.Service.dll": {}
+        }
       }
     }
   },
@@ -11784,10 +11807,22 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Microseguros.Core/1.0.0": {
+      "type": "project",
+      "path": "../Microseguros.Core/Microseguros.Core.csproj",
+      "msbuildProject": "../Microseguros.Core/Microseguros.Core.csproj"
+    },
+    "Microseguros.Service/1.0.0": {
+      "type": "project",
+      "path": "../Microseguros.Service/Microseguros.Service.csproj",
+      "msbuildProject": "../Microseguros.Service/Microseguros.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Microseguros.Core >= 1.0.0",
+      "Microseguros.Service >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0"
@@ -11822,7 +11857,14 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projects\\Microseguros\\Microseguros.Core\\Microseguros.Core.csproj": {
+              "projectPath": "C:\\projects\\Microseguros\\Microseguros.Core\\Microseguros.Core.csproj"
+            },
+            "C:\\projects\\Microseguros\\Microseguros.Service\\Microseguros.Service.csproj": {
+              "projectPath": "C:\\projects\\Microseguros\\Microseguros.Service\\Microseguros.Service.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
