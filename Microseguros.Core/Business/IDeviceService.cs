@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microseguros.Core.Services
+namespace Microseguros.Core.Business
 {
     public interface IDeviceService
     {

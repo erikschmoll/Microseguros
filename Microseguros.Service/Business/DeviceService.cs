@@ -1,9 +1,9 @@
 ﻿using Microseguros.Core.Models;
-using Microseguros.Core.Services;
+using Microseguros.Core.Business;
 using System;
 using System.Collections.Generic;
 
-namespace Microseguros.Service
+namespace Microseguros.Business
 {
     public class DeviceService : IDeviceService
     {

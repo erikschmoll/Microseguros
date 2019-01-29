@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microseguros.Core;
-using Microseguros.Core.Services;
+using Microseguros.Core.Business;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -15,7 +15,7 @@ namespace Microseguros.Api.Controllers
     {
         private readonly IDeviceService _service;
 
-        public ValuesController(IDeviceService service)
+        public ValuesController(IDeviceService service, IOptions<DataBase> options)
         {
             _service = service;
         }

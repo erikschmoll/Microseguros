@@ -1,5 +1,5 @@
-﻿using Microseguros.Core.Services;
-using Microseguros.Service;
+﻿using Microseguros.Core.Business;
+using Microseguros.Business;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
