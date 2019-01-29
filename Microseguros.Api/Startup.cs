@@ -29,7 +29,7 @@ namespace Microseguros.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.Configure<DataBase>(Configuration.GetSection("DataBase"));
+            services.Configure<DBOptions>(Configuration.GetSection("DataBase"));
             ConfigService.AddRegistration(services);
         }
 

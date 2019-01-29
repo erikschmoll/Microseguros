@@ -15,7 +15,7 @@ namespace Microseguros.Api.Controllers
     {
         private readonly IDeviceService _service;
 
-        public ValuesController(IDeviceService service, IOptions<DataBase> options)
+        public ValuesController(IDeviceService service, IOptions<DBOptions> options)
         {
             _service = service;
         }

@@ -2,7 +2,7 @@
 
 namespace Microseguros.Core
 {
-    public class DataBase
+    public class DBOptions
     {
         public string ConnectionString { get; set; }
     }
