@@ -18,7 +18,15 @@ namespace Microseguros.Business
         }
         public IEnumerable<Device> GetAll()
         {
-            return _deviceRepository.Get();
+            try
+            {
+                return _deviceRepository.Get();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al obtener los dispositivos");
+                throw ex;
+            }
         }
     }
 }
