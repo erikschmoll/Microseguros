@@ -1,5 +1,6 @@
 ﻿using Microseguros.Core.DataAccess;
 using Microseguros.Core.Models;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,19 +11,22 @@ namespace Microseguros.Service.DataAccess
     public class DeviceRepository : IDeviceRepository
     {
         private readonly ISqlDapper<Device> _sqlDapper;
-        public DeviceRepository(ISqlDapper<Device> sqlDapper)
+        private readonly ILogger<DeviceRepository> _logger;
+        public DeviceRepository(ILogger<DeviceRepository> logger, ISqlDapper<Device> sqlDapper)
         {
+            _logger = logger;
             _sqlDapper = sqlDapper;
         }
         public async Task<IEnumerable<Device>> GetAsync()
         {
             try
             {
-                return await _sqlDapper.GetAsync("devices");
+                return await _sqlDapper.GetAsync("select * from devices");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                _logger.LogError(ex, "DeviceRepository/GetAsync");
+                throw ex;
             }
         }
 

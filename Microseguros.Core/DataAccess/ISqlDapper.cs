@@ -8,7 +8,7 @@ namespace Microseguros.Core.DataAccess
 {
     public interface ISqlDapper<T>
     {
-        IEnumerable<T> Get(string table, string where = null, string orderby = null, object values = null);
-        Task<IEnumerable<T>> GetAsync(string table, string where = null, string orderby = null, object values = null);
+        IEnumerable<T> Get(string query, object values = null);
+        Task<IEnumerable<T>> GetAsync(string query, object values = null);
     }
 }
