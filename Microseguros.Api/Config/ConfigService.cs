@@ -19,6 +19,7 @@ namespace Microseguros.Api.Config
             #region Services
             services.AddSingleton<IDeviceService, DeviceService>();
             services.AddSingleton<IModelService, ModelService>();
+            services.AddSingleton<IBrandService, BrandService>();
             #endregion
 
             #region Repository
@@ -26,6 +27,7 @@ namespace Microseguros.Api.Config
             services.AddSingleton(typeof(ISqlDapper<>), typeof(SqlDapper<>));
             services.AddSingleton<IDeviceRepository, DeviceRepository>();
             services.AddSingleton<IModelRepository, ModelRepository>();
+            services.AddSingleton<IBrandRepository, BrandRepository>();
             #endregion
 
             return services;
