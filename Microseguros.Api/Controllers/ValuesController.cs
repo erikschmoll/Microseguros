@@ -31,7 +31,6 @@ namespace Microseguros.Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            _service.GetAll();
             return "value";
         }
 

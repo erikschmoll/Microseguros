@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Microseguros.Core.DataAccess
 {
     public interface IDeviceRepository
     {
-        IEnumerable<Device> Get();
+        Task<IEnumerable<Device>> GetAsync();
         Device Get(int id);
         IEnumerable<Device> Get(string name);
     }

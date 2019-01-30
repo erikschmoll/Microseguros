@@ -3,6 +3,7 @@ using Microseguros.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Microseguros.Service.DataAccess
 {
@@ -13,11 +14,11 @@ namespace Microseguros.Service.DataAccess
         {
             _sqlDapper = sqlDapper;
         }
-        public IEnumerable<Device> Get()
+        public async Task<IEnumerable<Device>> GetAsync()
         {
             try
             {
-                return _sqlDapper.Get("devices");
+                return await _sqlDapper.GetAsync("devices");
             }
             catch (Exception e)
             {

@@ -23,9 +23,9 @@ namespace Microseguros.Api.Controllers
 
         // GET: api/Device
         [HttpGet]
-        public IEnumerable<Device> Get()
+        public async Task<IEnumerable<Device>> Get()
         {
-            return _deviceService.GetAll();
+            return await _deviceService.GetAsync();
         }
 
         // GET: api/Device/5

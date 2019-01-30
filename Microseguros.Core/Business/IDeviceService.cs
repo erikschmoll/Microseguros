@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Microseguros.Core.Business
 {
     public interface IDeviceService
     {
-        IEnumerable<Device> GetAll();
+        Task<IEnumerable<Device>> GetAsync();
     }
 }

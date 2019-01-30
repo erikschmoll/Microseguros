@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microseguros.Core.DataAccess;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Microseguros.Business
 {
@@ -16,11 +17,11 @@ namespace Microseguros.Business
             _logger = logger;
             _deviceRepository = deviceRepository;
         }
-        public IEnumerable<Device> GetAll()
+        public async Task<IEnumerable<Device>> GetAsync()
         {
             try
             {
-                return _deviceRepository.Get();
+                return await _deviceRepository.GetAsync();
             }
             catch (Exception ex)
             {
