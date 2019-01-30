@@ -4777,7 +4777,9 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Dapper": "1.50.5",
-          "Microseguros.Core": "1.0.0"
+          "Microseguros.Core": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1"
         },
         "compile": {
           "bin/placeholder/Microseguros.Service.dll": {}
