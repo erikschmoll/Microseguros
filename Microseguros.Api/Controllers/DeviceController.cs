@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microseguros.Core.Business;
 using Microseguros.Core.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,7 @@ namespace Microseguros.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class DeviceController : ControllerBase
     {
         private readonly IDeviceService _deviceService;

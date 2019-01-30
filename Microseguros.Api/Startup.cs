@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microseguros.Api.Config;
 using Microseguros.Core;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,8 +30,28 @@ namespace Microseguros.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            #region Options
             services.Configure<DBOptions>(Configuration.GetSection("DataBase"));
+            #endregion
+
+            #region Dependency injection
             ConfigService.AddRegistration(services);
+            #endregion
+
+            #region Authentication
+            /*services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "api/values/5";
+                options.Audience = "https://localhost:44366";
+                options.TokenValidationParameters.ValidateLifetime = true;
+                options.TokenValidationParameters.ClockSkew = TimeSpan.FromMinutes(5);
+                options.RequireHttpsMetadata = false;
+            });*/
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
