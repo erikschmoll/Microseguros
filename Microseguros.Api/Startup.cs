@@ -65,7 +65,13 @@ namespace Microseguros.Api
             {
                 app.UseHsts();
             }
-
+            #region Grants for Apps
+            app.UseCors(builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+            #endregion
             app.UseHttpsRedirection();
             app.UseMvc();
         }
